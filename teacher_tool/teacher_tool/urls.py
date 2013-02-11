@@ -6,6 +6,10 @@ from django.conf.urls import patterns, include, url
 
 urlpatterns = patterns('',
     url(r'^$', 'teacher_tool.views.index', name='index'),
+    url(r'^my_cources/$', 'teacher_tool.views.my_cources_view', name='my_cources_list'),
+    url(r'^groups/$', 'teacher_tool.views.groups_view', name='groups_list'),
+
+
     # url(r'^teacher_tool/', include('teacher_tool.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
