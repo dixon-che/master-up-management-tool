@@ -1,7 +1,11 @@
 # Django settings for teacher_tool project.
 
+import os
+
 DEBUG = True
 TEMPLATE_DEBUG = DEBUG
+
+rel = lambda *x: os.path.join(os.path.dirname(os.path.abspath(__file__)), *x)
 
 ADMINS = (
     # ('Your Name', 'your_email@example.com'),
@@ -103,6 +107,7 @@ ROOT_URLCONF = 'teacher_tool.urls'
 WSGI_APPLICATION = 'teacher_tool.wsgi.application'
 
 TEMPLATE_DIRS = (
+    rel('templates'),
     # Put strings here, like "/home/html/django_templates" or "C:/www/django/templates".
     # Always use forward slashes, even on Windows.
     # Don't forget to use absolute paths, not relative paths.

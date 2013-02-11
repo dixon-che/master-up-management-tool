@@ -1,5 +1,6 @@
 from django.http import HttpResponse
+from django.views.generic.simple import direct_to_template
 
 
 def index(request):
-    return HttpResponse('Hello world!')
+    return direct_to_template(request, "index.html")
