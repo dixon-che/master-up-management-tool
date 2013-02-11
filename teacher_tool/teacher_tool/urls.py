@@ -5,7 +5,7 @@ from django.conf.urls import patterns, include, url
 # admin.autodiscover()
 
 urlpatterns = patterns('',
-    url(r'^$', 'teacher_tool.views.home', name='home'),
+    url(r'^$', 'teacher_tool.views.index', name='index'),
     # url(r'^teacher_tool/', include('teacher_tool.foo.urls')),
 
     # Uncomment the admin/doc line below to enable admin documentation:
