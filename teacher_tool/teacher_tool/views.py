@@ -6,9 +6,11 @@ def index(request):
     return direct_to_template(request, "index.html")
 
 
-def my_cources_view(request):
+def my_courses_view(request):
     return direct_to_template(request, "my_cources.html")
 
+def course_item_view(request):
+    return direct_to_template(request, "cource_item.html")
 
 def groups_view(request):
     return direct_to_template(request, "groups.html")
