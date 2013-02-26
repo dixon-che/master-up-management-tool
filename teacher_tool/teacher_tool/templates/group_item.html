@@ -6,14 +6,14 @@
       <h2>Группа 1. Осень 2012, web. (10)</h2>
       <p><h3><a href="#">Список активных курсов</a></h3></p>
 
+
 <div>
   <ul>
-    <li><a href="/student/item/">1. Студент 1</a></li>
-    <li><a href="/student/item/">2. Студент 2</a></li>
-    <li><a href="/student/item/">3. Студент 3</a></li>
-    <li><a href="/student/item/">4. Студент 4</a></li>
-    <li><a href="/student/item/">5. Студент 5</a></li>
-    <li><a href="/student/item/">...</a></li>
+    {% for student in students %}
+    <li><a href="/student/{{ student.id }}/">
+      {{ forloop.counter }}. {{ student.first_name }} {{ student.last_name }}
+    </a></li>
+    {% endfor %}
   </ul>
 </div>
 

@@ -8,7 +8,7 @@ urlpatterns = patterns('',
     url(r'^my_courses/$', 'teacher_tool.views.my_courses_view', name='my_courses_list'),
     url(r'^my_courses/course_item/$', 'teacher_tool.views.course_item_view', name='course_item'),
     url(r'^groups/$', 'teacher_tool.views.groups_view', name='groups_list'),
-    url(r'^groups/group_item/$', 'teacher_tool.views.group_item_view', name='group_item'),
+    url(r'^groups/group_item/$', 'teacher_tool.apps.student.views.group_item_view', name='group_item'),
     url(r'^student/item/$', 'teacher_tool.views.student_item_view', name='student_item'),
 
     # url(r'^teacher_tool/', include('teacher_tool.foo.urls')),

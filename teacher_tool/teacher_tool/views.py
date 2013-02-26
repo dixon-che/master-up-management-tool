@@ -1,4 +1,3 @@
-from django.http import HttpResponse
 from django.views.generic.simple import direct_to_template
 
 
@@ -13,9 +12,6 @@ def course_item_view(request):
 
 def groups_view(request):
     return direct_to_template(request, "groups.html")
-
-def group_item_view(request):
-    return direct_to_template(request, "group_item.html")
 
 def student_item_view(request):
     return direct_to_template(request, "student_item.html")
