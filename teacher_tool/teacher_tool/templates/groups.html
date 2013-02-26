@@ -4,10 +4,9 @@
 
 {% block main_content %}
 
-      <h2><a href="/groups/group_item/">Группа 1. Осень 2012, web. (10)</a></h2>
+      {% for group in groups %}
+      <h2><a href="/groups/{{ group.id }}/">{{ group.name }}</a></h2>
       <p>Список активных курсов</p>
-
-      <h2><a href="/groups/group_item/">Группа 2. Весна 2013, web. (7)</a></h2>
-      <p>Список активных курсов</p>
+      {% endfor %}
 
 {% endblock main_content %}

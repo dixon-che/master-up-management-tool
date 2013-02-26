@@ -10,9 +10,6 @@ def my_courses_view(request):
 def course_item_view(request):
     return direct_to_template(request, "course_item.html")
 
-def groups_view(request):
-    return direct_to_template(request, "groups.html")
-
 def student_item_view(request):
     return direct_to_template(request, "student_item.html")
 

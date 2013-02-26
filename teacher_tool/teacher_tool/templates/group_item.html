@@ -3,12 +3,14 @@
 
 {% block main_content %}
 
-      <h2>Группа 1. Осень 2012, web. (10)</h2>
+      <h2>{{ group.name }}</h2>
+      <p>{{ group.description }}</p>
       <p><h3><a href="#">Список активных курсов</a></h3></p>
 
 
 <div>
   <ul>
+
     {% for student in students %}
     <li><a href="/student/{{ student.id }}/">
       {{ forloop.counter }}. {{ student.first_name }} {{ student.last_name }}
