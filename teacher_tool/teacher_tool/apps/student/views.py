@@ -23,3 +23,9 @@ def groups_view(request):
     groups = Group.objects.all()
     return render(request, "groups.html",
                   {'groups': groups})
+
+
+def student_item_view(request, id):
+    student = get_object_or_404(Student, id=id)
+    return render(request, "student_item.html",
+                  {'student': student})

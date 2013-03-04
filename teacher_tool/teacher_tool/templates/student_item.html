@@ -3,15 +3,15 @@
 
 {% block main_content %}
 
-      <h2>Вася Пупкин</h2>
+<h2>{{ student.first_name }} {{ student.last_name }}</h2>
 
 <h3>Контакты:</h3>
 <div>
   <ul>
-    <li>skype: pupkin</li>
-    <li>email: pupkin@gmail.com</li>
-    <li>github: pupkin@gmail.com</li>
-    <li>phone: +38090 000 0000</li>
+    <li>skype: {{ student.skype }}</li>
+    <li>email: {{ student.email }}</li>
+    <li>github: {{ student.github }}</li>
+    <li>phone: {{ student.phone }}</li>
   </ul>
 </div>
 
