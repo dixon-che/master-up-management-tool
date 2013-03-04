@@ -1,12 +1,11 @@
-from django.views.generic.simple import direct_to_template
-
+from django.shortcuts import render
 
 def index(request):
-    return direct_to_template(request, "index.html")
+    return render(request, "index.html")
 
 def my_courses_view(request):
-    return direct_to_template(request, "my_courses.html")
+    return render(request, "my_courses.html")
 
 def course_item_view(request):
-    return direct_to_template(request, "course_item.html")
+    return render(request, "course_item.html")
 
