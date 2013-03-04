@@ -16,10 +16,10 @@ class Student(models.Model):
     first_name = models.CharField(max_length=30)
     last_name = models.CharField(max_length=30)
 
-    # skype = models.CharField(max_length=255)
-    # email = models.EmailField(max_length=255)
-    # github = models.URLField(max_length=255)
-    # phone = models.CharField(max_length=13)
+    skype = models.CharField(max_length=255, blank=True, null=True)
+    email = models.EmailField(max_length=255, blank=True, null=True)
+    github = models.URLField(max_length=255, blank=True, null=True)
+    phone = models.CharField(max_length=13, blank=True, null=True)
 
     def __unicode__(self):
         return "%s - %s" % (self.first_name, self.last_name)
