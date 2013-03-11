@@ -3,7 +3,11 @@
 
 {% block main_content %}
 
-<h2>{{ student.first_name }} {{ student.last_name }}<a href="{% url 'student_edit' student.id %}"><span class="icon-edit"></span></a></h2>
+<h2>{{ student.first_name }} {{ student.last_name }}
+    {% if user.is_superuser %}
+    <a href="{% url 'student_edit' student.id %}"><span class="icon-edit"></span></a>
+    {% endif %}
+</h2>
 
 <h3>Контакты:</h3>
 <div>

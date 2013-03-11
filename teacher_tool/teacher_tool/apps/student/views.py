@@ -2,11 +2,12 @@ from django.shortcuts import render, redirect, get_object_or_404
 from django.http import Http404
 from django.core.urlresolvers import reverse
 from django.forms import ModelForm
-
+from django.contrib.auth.decorators import login_required
 
 from teacher_tool.apps.student.models import Student, Group
 
 
+@login_required
 def group_item_view(request, id):
     # try:
     #     group = Group.objects.get(id=id)
@@ -21,12 +22,14 @@ def group_item_view(request, id):
                    'group': group})
 
 
+@login_required
 def groups_view(request):
     groups = Group.objects.all()
     return render(request, "groups.html",
                   {'groups': groups})
 
 
+@login_required
 def student_item_view(request, id):
     student = get_object_or_404(Student, id=id)
     return render(request, "student_item.html",
@@ -39,7 +42,11 @@ class StudentForm(ModelForm):
         model = Student
 
 
+@login_required
 def student_item_edit(request, id=None):
+    if not request.user.is_superuser:
+        return redirect(reverse("login") + "?next=%s" % request.META['PATH_INFO'])
+
     if id is not None:
         student = get_object_or_404(Student, id=id)
     else:

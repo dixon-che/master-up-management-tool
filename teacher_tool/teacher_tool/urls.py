@@ -11,7 +11,8 @@ urlpatterns = patterns('',
     url(r'^student/create/$', 'teacher_tool.apps.student.views.student_item_edit', name='student_create'),
     url(r'^student/(?P<id>\d+)/edit/$', 'teacher_tool.apps.student.views.student_item_edit', name='student_edit'),
 
-
+    url(r'^accounts/login/$', 'django.contrib.auth.views.login', name="login"),
+    url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', name="logout"),
     url(r'^groups/', include('teacher_tool.apps.student.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

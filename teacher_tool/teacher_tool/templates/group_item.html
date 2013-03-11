@@ -12,9 +12,14 @@
     {% for student in students %}
     <li><a href="{% url 'student_item' student.id %}">
       {{ forloop.counter }}. {{ student.first_name }} {{ student.last_name }}</a>
+      {% if user.is_superuser %}
       <a href="{% url 'student_edit' student.id %}"><span class="icon-edit"></span></a>
+      {% endif %}
     </li>
     {% endfor %}
+    {% if user.is_superuser %}
+    <li>Add new <a href="{% url 'student_create' %}"><span class="icon-plus"></span></a></li>
+    {% endif %}
   </ul>
 </div>
 
