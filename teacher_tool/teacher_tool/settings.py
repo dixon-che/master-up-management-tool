@@ -126,6 +126,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
+    'registration',
     'south',
 
     'teacher_tool.apps.student',
@@ -160,3 +161,6 @@ LOGGING = {
         },
     }
 }
+
+ACCOUNT_ACTIVATION_DAYS = 7
+EMAIL_PORT = 1025
