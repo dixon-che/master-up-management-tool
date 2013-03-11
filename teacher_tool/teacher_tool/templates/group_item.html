@@ -11,8 +11,9 @@
 
     {% for student in students %}
     <li><a href="{% url 'student_item' student.id %}">
-      {{ forloop.counter }}. {{ student.first_name }} {{ student.last_name }}
-    </a></li>
+      {{ forloop.counter }}. {{ student.first_name }} {{ student.last_name }}</a>
+      <a href="{% url 'student_edit' student.id %}"><span class="icon-edit"></span></a>
+    </li>
     {% endfor %}
   </ul>
 </div>
