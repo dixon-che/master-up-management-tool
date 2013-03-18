@@ -8,6 +8,10 @@ class Course(models.Model):
     description = models.TextField()
     start_date = models.DateField()
     end_date = models.DateField()
+    is_active = models.BooleanField(default=False)
+
+    def __unicode__(self):
+        return self.name
 
 
 class Lesson(models.Model):
@@ -19,6 +23,9 @@ class Lesson(models.Model):
     lecture = models.FileField(upload_to='lectures', blank=True, null=True)
     datetime = models.DateTimeField()
 
+    def __unicode__(self):
+        return self.name
+
 
 class StudentsResults(models.Model):
     lesson = models.ForeignKey(Lesson)
@@ -29,3 +36,5 @@ class StudentsResults(models.Model):
 
     class Meta:
         unique_together = (("lesson", "student"), )
+        verbose_name = "Students Result"
+        verbose_name_plural = "Students Results"
