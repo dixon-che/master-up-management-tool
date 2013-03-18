@@ -15,5 +15,6 @@ urlpatterns = patterns('',
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', name="logout"),
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^groups/', include('teacher_tool.apps.student.urls')),
+    url(r'^course/', include('teacher_tool.apps.course.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

@@ -10,6 +10,7 @@ class LessonInline(admin.StackedInline):
 class CourseAdmin(admin.ModelAdmin):
     list_display = ("name", "start_date", "end_date", "is_active")
     list_filter = ("is_active", )
+    list_editable = ("is_active", )
     inlines = (LessonInline, )
 
 
