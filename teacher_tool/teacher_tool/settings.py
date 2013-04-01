@@ -3,6 +3,8 @@
 import os
 
 DEBUG = True
+#DEBUG = False
+
 TEMPLATE_DEBUG = DEBUG
 
 rel = lambda *x: os.path.join(os.path.dirname(os.path.abspath(__file__)), *x)

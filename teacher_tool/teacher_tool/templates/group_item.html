@@ -7,6 +7,26 @@
       <p>{{ group.description }}</p>
 
 <div>
+
+<div class="pagination">
+    <span class="step-links">
+      <a href="?page=1">first</a>
+        {% if students.has_previous %}
+            <a href="?page={{ students.previous_page_number }}">previous</a>
+        {% endif %}
+
+
+        <span class="current">
+            Page {{ students.number }} of {{ students.paginator.num_pages }}.
+        </span>
+
+        {% if students.has_next %}
+            <a href="?page={{ students.next_page_number }}">next</a>
+        {% endif %}
+        <a href="?page={{ students.paginator.num_pages }}">last</a>
+    </span>
+</div>
+
   <ul>
 
     {% for student in students %}

@@ -3,6 +3,8 @@ from django.http import Http404
 from django.core.urlresolvers import reverse
 from django.forms import ModelForm
 from django.contrib.auth.decorators import login_required
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+
 
 from teacher_tool.apps.student.models import Student, Group
 
@@ -16,7 +18,15 @@ def group_item_view(request, id):
 
     group = get_object_or_404(Group, id=id)
 
+
     students = Student.objects.filter(group=group)
+    paginator = Paginator(students, 5)
+    page = request.GET.get('page', 1)
+    try:
+        students = paginator.page(page)
+    except (PageNotAnInteger, EmptyPage):
+        raise Http404
+
     return render(request, "group_item.html",
                   {'students': students,
                    'group': group})
