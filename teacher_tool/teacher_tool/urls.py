@@ -16,5 +16,13 @@ urlpatterns = patterns('',
     url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^groups/', include('teacher_tool.apps.student.urls')),
     url(r'^course/', include('teacher_tool.apps.course.urls')),
+    # url(r'^pages/', include('django.contrib.flatpages.urls')),
+
+    url(r'^contact/$', 'teacher_tool.views.contact', name="contact_page"),
+
     url(r'^admin/', include(admin.site.urls)),
+)
+
+urlpatterns += patterns('django.contrib.flatpages.views',
+    url(r'^pages(?P<url>.*)$', 'flatpage', name='flatpage'),
 )
