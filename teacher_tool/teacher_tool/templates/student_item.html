@@ -1,4 +1,5 @@
 {% extends "group_item.html" %}
+{% load comments %}
 
 
 {% block main_content %}
@@ -18,6 +19,18 @@
     <li>phone: {{ student.phone }}</li>
   </ul>
 </div>
-{{ get }}
+
+{% get_comment_list for student as comment_list %}
+<div>
+{% for comment in comment_list %}
+<p>{{ comment.user_name }}: {{ comment.comment }}
+</p>
+{% endfor %}
+</div>
+
+{% get_comment_form for student as form %}
+{% include "comments/form.html" %}
+
+
 {% endblock main_content %}
 

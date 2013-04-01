@@ -43,7 +43,8 @@ def groups_view(request):
 def student_item_view(request, id):
     student = get_object_or_404(Student, id=id)
     return render(request, "student_item.html",
-                  {'student': student})
+                  {'student': student,
+                   'next': reverse('student_item', args=[student.id])})
 
 
 class StudentForm(ModelForm):

@@ -19,7 +19,7 @@ urlpatterns = patterns('',
     # url(r'^pages/', include('django.contrib.flatpages.urls')),
 
     url(r'^contact/$', 'teacher_tool.views.contact', name="contact_page"),
-
+    (r'^comments/', include('django.contrib.comments.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
 
