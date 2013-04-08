@@ -131,7 +131,7 @@ INSTALLED_APPS = (
     # Uncomment the next line to enable admin documentation:
     # 'django.contrib.admindocs',
 
-    'registration',
+    #'registration',
     'south',
 
     'teacher_tool.apps.student',

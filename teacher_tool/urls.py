@@ -13,7 +13,7 @@ urlpatterns = patterns('',
 
     url(r'^accounts/login/$', 'django.contrib.auth.views.login', name="login"),
     url(r'^accounts/logout/$', 'django.contrib.auth.views.logout', name="logout"),
-    url(r'^accounts/', include('registration.backends.default.urls')),
+    #url(r'^accounts/', include('registration.backends.default.urls')),
     url(r'^groups/', include('teacher_tool.apps.student.urls')),
     url(r'^course/', include('teacher_tool.apps.course.urls')),
     # url(r'^pages/', include('django.contrib.flatpages.urls')),
