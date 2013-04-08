@@ -170,3 +170,9 @@ LOGGING = {
 
 ACCOUNT_ACTIVATION_DAYS = 7
 EMAIL_PORT = 1025
+
+
+try:
+    from local_settings import *
+except ImportError:
+    print "Can't load local settings!"
